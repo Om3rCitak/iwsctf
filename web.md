@@ -5,9 +5,13 @@ Merhaba arkadaşlar. Adeo Intern & Work stajyer alımları için ufak bir ctf d�
 Soruyu açtığımızda bize bir txt dosyası veriyordu ve tt nin içinde bu bilgiler yer alıyor.
 
 >http://ctf.adeo.com.tr/ adresine açtıktan sonra aşağıdaki kullanıcı adını ve şifreyi giriniz. 
+>
 >Soru: IWS üyelerimiz, DB ismi nedir ?
+>
 >http://ctf.adeo.com.tr/
+>
 >k.adi: adeo
+>
 >sifre: @deoP@ssW0rd
 	
 Yukarıdaki adrese gittiğimizde basit bir login form bizi bekliyor. verilen şifreler ile giriş yaptıktan sonra ekranda kullanıcı adımız ve şifremiz gözüküyor.
@@ -38,9 +42,15 @@ YWRlbycpYW5kIDE9MCB1bmlvbiBzZWxlY3QgMCxkYXRhYmFzZSgpLDAj
 ```
 
 payload için açıklama : 
+```
 adeo'dan sonra "')" yazarak mevcut sorgunun parantezini kapamış olduk.
+```
+```
 "and 1=0" ile, ilk parantezini kapadığımız sorgunun false dönüp, 2. sorgumuzun çalışmasını sağlamış olduk.
+```
+```
 "union select 0,database(),0#" ilede bilindiği üzere mysql de database() fonksiyonu mevcut veritabanın ismini verir.
+```
 peki neden "0,database,0" ? Çünki veritabanında userların tutulduğu tabloda 3 kolon var. id, username, password. ekrana basılan ise sadece 2. ve 3. kolon. biz bu sorguda database() fonksiyonunu 2. kolona yazdık, username yerinde çıktı verdi. 3. kolon yerine yazsaydık password yerinde çıktı vermiş olacaktı.
 
 ![cat](http://omercitak.net/iws/resim4.png) 
