@@ -7,4 +7,4 @@ Adeo'nun Intern & Work kapsamında düzenlediği CTF sorularının çözümleri.
 Not: Yarışmayı ufak bi talihsizlik sonucu 1.liği kaybedip 2. olarak tamamladım :)
 
 ### Score Board
-![cat](http://omercitak.net/iws/score.png) 
+![cat](http://omercitak.net/iws/score.jpg) 
